@@ -1,0 +1,27 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0.0",
+	"EngineVersion": "5.8.0",
+	"FriendlyName": "ScreenStack - UI Layers, Modals & Input Ownership",
+	"Description": "Who owns the input right now? Every project answers that with a pile of booleans spread across widgets, and every project ships the same bugs: a popup closes and un-pauses a game that was paused by the menu underneath it; the HUD is pushed while a modal is open and quietly steals the gamepad; a modal over a modal closes and restores the wrong input mode because each widget remembered what it thought the state was instead of asking. ScreenStack is the plumbing under your menus. Layers are ordered - HUD, Menu, Modal, Popup, System - so a push lands where it belongs rather than on top. Input mode and cursor are the topmost OPINION, and layers that have none are transparent. Pause is an OR across the whole stack, which is the single rule that fixes the popup bug. Everything is computed from the stack on every change, never remembered, so pop always restores exactly what the layer beneath asked for. It ships no menus and no widgets, and it deliberately does not do gamepad focus navigation - it is the layer under whatever you already use for that.",
+	"Category": "User Interface",
+	"CreatedBy": "Silvan Teufel",
+	"CreatedByURL": "https://silvan.teufel-engineering.com",
+	"DocsURL": "https://wiki.teufel-engineering.com/en/ScreenStack/documentation",
+	"SupportURL": "mailto:teufelsilvan@gmail.com",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "ScreenStack",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"PlatformAllowList": [
+				"Win64"
+			]
+		}
+	]
+}
